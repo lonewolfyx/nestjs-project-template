@@ -3,8 +3,7 @@ import { DatabaseModule } from '@/share/database/database.module'
 
 @Global()
 @Module({
-    imports: [DatabaseModule],
-    exports: [DatabaseModule]
+	imports: [DatabaseModule],
+	exports: [DatabaseModule]
 })
-export class ShareModule {
-}
+export class ShareModule {}
