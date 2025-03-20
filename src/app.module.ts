@@ -4,8 +4,9 @@ import { AppController } from '@/app.controller'
 import { AppService } from '@/app.service'
 import { ConfigModule } from '@nestjs/config'
 import * as process from 'node:process'
-import { APP_FILTER } from '@nestjs/core'
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core'
 import { AllExceptionFilter } from '@/common/filters/all-exception.filter'
+import { ResponseInterceptor } from '@/common/interceptor/response.interceptor'
 
 @Module({
 	imports: [
@@ -19,7 +20,7 @@ import { AllExceptionFilter } from '@/common/filters/all-exception.filter'
 	controllers: [AppController],
 	providers: [
 		AppService,
-		{ provide: APP_FILTER, useClass: AllExceptionFilter }
-    ]
+		{ provide: APP_FILTER, useClass: AllExceptionFilter },
+		{ provide: APP_INTERCEPTOR, useClass: ResponseInterceptor }]
 })
 export class AppModule {}
