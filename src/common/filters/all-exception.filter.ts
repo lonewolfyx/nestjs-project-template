@@ -29,7 +29,9 @@ export class AllExceptionFilter<T> implements ExceptionFilter {
 
 		const { code, message } = this.getErrorStructure(exception)
 
-		response.status(HttpStatus.OK).json(new ResponseDto(message).setCode(code).setRequestId(request.requestId))
+		response
+			.status(HttpStatus.OK)
+			.json(new ResponseDto(message).setCode(code).setRequestId(request.requestId).setMessage('error'))
 	}
 
 	/**
