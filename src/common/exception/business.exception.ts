@@ -14,8 +14,6 @@ export class BusinessException extends HttpException {
 				message
 			] = error as [number, string]
 			super(message, code)
-
-			return
 		} else {
 			super(error, HttpStatus.OK)
 		}
