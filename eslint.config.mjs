@@ -38,7 +38,8 @@ export default tseslint.config(
 			'@typescript-eslint/no-unused-vars': 'off',
 			'@typescript-eslint/no-misused-promises': 'off',
 			'@typescript-eslint/no-unnecessary-type-assertion': 'off',
-			'@typescript-eslint/no-unsafe-enum-comparison': 'off'
+			'@typescript-eslint/no-unsafe-enum-comparison': 'off',
+			'@typescript-eslint/no-redundant-type-constituents': 'off'
 		}
 	}
 )
