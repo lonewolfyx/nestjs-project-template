@@ -14,6 +14,11 @@ export const HTTP_OK = [
 	'Ok'
 ]
 
+export const CLIENT_DELETED_ERROR = [
+	400202,
+	'数据不存在'
+]
+
 // 401 - 授权失败的
 export const CLIENT_HTTP_UNAUTHORIZED_EXPIRED: ResponseCode = [
 	401001,

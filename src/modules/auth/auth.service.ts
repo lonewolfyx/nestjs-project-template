@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { UserService } from '@/modules/user/user.service'
 import { JwtService } from '@nestjs/jwt'
+import { BusinessException } from '@/common/exception/business.exception'
 
 @Injectable()
 export class AuthService {
@@ -9,12 +10,23 @@ export class AuthService {
 		private readonly jwtService: JwtService
 	) {}
 
-	async validateUser(username: string, pass: string): Promise<any> {
+    /**
+     * 验证用户
+     * @param username
+     * @param password
+     */
+	async validateUser(username: string, password: string): Promise<any> {
 		const user = await this.usersService.findOne(username)
-		if (user && user.password === pass) {
+
+		if (user.password != password) {
+			return null
+		}
+
+		if (user && user.password === password) {
 			const { password, ...result } = user
 			return result
 		}
+
 		return null
 	}
 

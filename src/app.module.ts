@@ -25,8 +25,11 @@ import { AppController } from '@/app.controller'
 		AppController
 	],
 	providers: [
+        // 全局 JWT 验证守卫
 		{ provide: APP_GUARD, useClass: JwtAuthGuard },
+        // 全局 异常过滤器
 		{ provide: APP_FILTER, useClass: AllExceptionFilter },
+        // 全局 响应拦截器
 		{ provide: APP_INTERCEPTOR, useClass: ResponseInterceptor }
 	]
 })
