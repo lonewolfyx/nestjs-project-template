@@ -2,7 +2,6 @@ import { ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/com
 import { AuthGuard } from '@nestjs/passport'
 import { Observable } from 'rxjs'
 import { Reflector } from '@nestjs/core'
-import { IS_PUBLIC_KEY } from '@/modules/auth/decorators/public.decorator'
 import { Request } from 'express'
 import { JsonWebTokenError, TokenExpiredError } from '@nestjs/jwt'
 import { NotBeforeError } from 'jsonwebtoken'
@@ -11,9 +10,10 @@ import {
 	CLIENT_HTTP_UNAUTHORIZED_ERROR,
 	CLIENT_HTTP_UNAUTHORIZED_EXPIRED
 } from '@/constants/response.constants'
+import { GUARD_JWT, IS_PUBLIC_KEY } from '@/modules/auth/auth.constants'
 
 @Injectable()
-export class JwtAuthGuard extends AuthGuard('jwt') {
+export class JwtAuthGuard extends AuthGuard(GUARD_JWT) {
 	constructor(private reflector: Reflector) {
 		super()
 	}

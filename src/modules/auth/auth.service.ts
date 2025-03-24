@@ -10,11 +10,11 @@ export class AuthService {
 		private readonly jwtService: JwtService
 	) {}
 
-    /**
-     * 验证用户
-     * @param username
-     * @param password
-     */
+	/**
+	 * 验证用户
+	 * @param username
+	 * @param password
+	 */
 	async validateUser(username: string, password: string): Promise<any> {
 		const user = await this.usersService.findOne(username)
 

@@ -1,4 +1,9 @@
 import { SetMetadata } from '@nestjs/common'
+import { IS_PUBLIC_KEY } from '@/modules/auth/auth.constants'
 
-export const IS_PUBLIC_KEY = 'isPublic'
+/**
+ * 设置为公开路由
+ * 装饰器使用：@Public()
+ * @constructor
+ */
 export const Public = () => SetMetadata(IS_PUBLIC_KEY, true)

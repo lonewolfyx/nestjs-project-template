@@ -13,12 +13,12 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
 
 	/**
 	 * 登录校验策略
-     *
-     * username, password 来自于 passport 规则定义的
-     * 默认情况下，username 字段会被解析为 usernameField 的值，
-     * password 字段会被解析为 passwordField 的值，
-     * 如果没有设置 passwordField，则默认为 password。
-     *
+	 *
+	 * username, password 来自于 passport 规则定义的
+	 * 默认情况下，username 字段会被解析为 usernameField 的值，
+	 * password 字段会被解析为 passwordField 的值，
+	 * 如果没有设置 passwordField，则默认为 password。
+	 *
 	 * @param username
 	 * @param password
 	 */
