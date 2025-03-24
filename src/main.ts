@@ -5,6 +5,7 @@ import { Logger, ValidationPipe } from '@nestjs/common'
 import { requestMiddleware } from '@/common/middleware/request.middleware'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { env } from '@/utils/env'
+import { ipMiddleware } from '@/common/middleware/ip.middleware'
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule)
@@ -14,6 +15,9 @@ async function bootstrap() {
 
 	// 请求 ID
 	app.use(requestMiddleware)
+
+    // ip 中间件
+    app.use(ipMiddleware)
 
 	// 全局管道验证器
 	app.useGlobalPipes(
