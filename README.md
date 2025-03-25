@@ -18,6 +18,39 @@
 - 文件上传与存储：使用 Multer 进行文件上传和存储，支持文件上传的配置和设置
 - 系统接口：根据业务代码自动生成相关的api接口文档。
 
+## 使用
+
+首先执行以下命令来创建一个新项目：
+
+```shell
+git clone https://github.com/lonewolfyx/nestjs-project-template.git my-project
+```
+
+其次执行以下命令来安装依赖包和初始化项目：
+
+```shell
+cd ./my-project
+npm install
+```
+
+一旦安装了依赖项，您现在就可以通过创建`.env`包含用于开发的环境变量的新文件来配置您的项目。
+
+```shell
+cp .env.example .env.development
+npm install
+```
+
+> 这边建议最后上线的时候将`.env.development`文件 cp 一份为 `.env.production` 使用生产环境变量
+
+### 配置数据库
+
+这边使用的是 Prisma ORM，所以需要先配置数据库，在 `prisma/schema.prisma` 文件中添加数据库配置，然后执行以下命令来生成数据库模型：
+
+```shell
+npm run db:pull
+npm run db:generate
+```
+
 #### 公共接口
 
 ```ts
