@@ -16,8 +16,8 @@ async function bootstrap() {
 	// 请求 ID
 	app.use(requestMiddleware)
 
-    // ip 中间件
-    app.use(ipMiddleware)
+	// ip 中间件
+	app.use(ipMiddleware)
 
 	// 全局管道验证器
 	app.useGlobalPipes(
