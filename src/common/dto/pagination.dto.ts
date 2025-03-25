@@ -2,6 +2,7 @@
  * 分页参数
  *
  * @example export class <% className %> extends PartialType(PaginationDto) {}
+ * @example xxx(@Query() params: PaginationDto){}
  */
 export class PaginationDto {
 	/**

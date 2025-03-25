@@ -8,7 +8,6 @@ import { ResponseInterceptor } from '@/common/interceptor/response.interceptor'
 import { AuthModule } from './modules/auth/auth.module'
 import { UserModule } from './modules/user/user.module'
 import { JwtAuthGuard } from '@/modules/auth/guard/jwt-auth.guard'
-import { AppController } from '@/app.controller'
 import { RbacGuard } from '@/modules/auth/guard/rbac.guard'
 
 @Module({
@@ -21,9 +20,6 @@ import { RbacGuard } from '@/modules/auth/guard/rbac.guard'
 		AuthModule,
 		UserModule
 
-	],
-	controllers: [
-		AppController
 	],
 	providers: [
 		// 全局 JWT 验证守卫
